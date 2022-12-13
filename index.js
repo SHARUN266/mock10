@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const UserModel = require("./models/User.Schema");
 const app = express();
+const PORT=process.env.PORT||8080
 app.use(cors());
 app.use(express.json());
 app.get("/", (req, res) => {
@@ -48,7 +49,7 @@ mongoose
     "mongodb+srv://sharun:123@atlascluster.rujptme.mongodb.net/mock10database?retryWrites=true&w=majority"
   )
   .then(() => {
-    app.listen(8080, () => {
+    app.listen(PORT, () => {
       console.log("Hello your server is running");
     });
   });
